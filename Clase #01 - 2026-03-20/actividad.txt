@@ -1,0 +1,9 @@
+Hacer un programa para calcular e informar el importe de una venta, a partir del ingreso de una cantidad de unidades de alfajores.  El comercio vende cada caja de 12 alfajores a $15000, y cada alfajor suelto a $ 1500. Realizar el codigo en C++.
+
+1) DATOS DE INGRESO:
+
+
+2) PROCESO:
+
+
+3) DATOS DE SALIDA: 
