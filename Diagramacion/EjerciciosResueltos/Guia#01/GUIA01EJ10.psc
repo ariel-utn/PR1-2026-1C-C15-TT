@@ -1,0 +1,15 @@
+Algoritmo GUIA01EJ10
+	Leer IMP
+	R1000 = IMP%1000
+	B1000 = (IMP-R1000)/1000
+	Escribir '$ 1000 - ',B1000
+	R500 = R1000%500
+	B500 = (R1000-R500)/500
+	Escribir '$ 500 - ',B500
+	R200 = R500%200
+	B200 = (R500-R200)/200
+	Escribir '$ 200 - ',B200
+	R100 = R200%100
+	B100 = (R200-R100)/100
+	Escribir '$ 100 - ',B100
+FinAlgoritmo

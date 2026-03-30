@@ -1,0 +1,5 @@
+Algoritmo GUIA01EJ07_v01
+	Leer IMPSD,IMPCD
+	DESC = 100-((IMPCD/IMPSD)*100)
+	Escribir 'EL DESCUENTO APLICADO FUE: ',DESC,'%'
+FinAlgoritmo
