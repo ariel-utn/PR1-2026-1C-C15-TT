@@ -1,0 +1,11 @@
+Algoritmo ejemploIF
+	Si --PROPOSICION LOGICA-- Entonces
+		VERDADERO
+		OBLIGATORIO
+		INSTRUCCIONES
+	SiNo
+		FALSO
+		OPTATIVO
+		INSTRUCCIONES
+	FinSi
+FinAlgoritmo
