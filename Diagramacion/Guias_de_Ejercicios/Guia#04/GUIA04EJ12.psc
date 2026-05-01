@@ -1,0 +1,48 @@
+Algoritmo GUIA04EJ12
+	// PTO C: CONTADOR GENERAL DE IMPARES
+	CONT_IMP_GRAL = 0
+	Para GRUPO<-1 Hasta 10 Con Paso 1 Hacer
+		// REINICIAR VARIABLES POR CADA GRUPO
+		// PTO A
+		CONT_POS = 0
+		CONT_NEG = 0
+		CONT_CERO = 0
+		// PTO B
+		BAND_IMPAR = 0
+		Para ORDEN<-1 Hasta 5 Con Paso 1 Hacer
+			Leer NUM
+			// PTO A: CONTAR POS, NEG Y CEROS
+			Si (NUM>0) Entonces
+				CONT_POS = CONT_POS+1
+			SiNo
+				Si (NUM<0) Entonces
+					CONT_NEG = CONT_NEG+1
+				SiNo
+					CONT_CERO = CONT_CERO+1
+				FinSi
+			FinSi
+			// PTO B: ULTIMO IMPAR Y SU ORDEN
+			Si (NUM%2!=0) Entonces
+				ULT_IMP = NUM
+				ORD_ULT_IMP = ORDEN
+				BAND_IMPAR = 1
+				// PTO C: CONTAR AL GENERAL
+				CONT_IMP_GRAL = CONT_IMP_GRAL+1
+			FinSi
+		FinPara
+		// INFORMES POR CADA GRUPO
+		// PTO A
+		Escribir 'A) GRUPO ',GRUPO,':'
+		Escribir 'CANTIDAD POSITIVOS: ',CONT_POS
+		Escribir 'CANTIDAD NEGATIVOS: ',CONT_NEG
+		Escribir 'CANTIDAD CEROS: ',CONT_CERO
+		// PTO B
+		Si (BAND_IMPAR==1) Entonces
+			Escribir 'B) ULTIMO IMPAR: ',ULT_IMP,' EN ORDEN: ',ORD_ULT_IMP
+		SiNo
+			Escribir 'B) NO SE INGRESARON NUMEROS IMPARES EN ESTE GRUPO.'
+		FinSi
+	FinPara
+	// PTO C: INFORME FINAL
+	Escribir 'C) TOTAL DE NUMEROS IMPARES EN LOS 10 GRUPOS: ',CONT_IMP_GRAL
+FinAlgoritmo

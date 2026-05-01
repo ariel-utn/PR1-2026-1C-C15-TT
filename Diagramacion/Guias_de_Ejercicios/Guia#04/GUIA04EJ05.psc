@@ -1,0 +1,31 @@
+Algoritmo GUIA04EJ05
+	// PTO A
+	GRUPO_ORD_IMPAR_MAY_MEN = 0
+	Escribir 'INGRESE UN NUMERO:'
+	Leer NUM
+	Mientras NUM!=0 Hacer
+		ES_ORDENADO_IMPAR = 1
+		BANDERA_PRIMER_IMPAR = 0
+		Mientras NUM!=0 Hacer
+			// SOLO IMPARES
+			Si NUM%2!=0 Entonces
+				Si BANDERA_PRIMER_IMPAR==0 Entonces
+					BANDERA_PRIMER_IMPAR = 1
+				SiNo
+					// VERIFICACION DE ORDEN MAYOR A MENOR
+					Si NUM>=NUM_ANT_IMPAR Entonces
+						ES_ORDENADO_IMPAR = 0
+					FinSi
+				FinSi
+				NUM_ANT_IMPAR = NUM
+			FinSi
+			Leer NUM
+		FinMientras
+		Si ES_ORDENADO_IMPAR==1 Entonces
+			GRUPO_ORD_IMPAR_MAY_MEN = GRUPO_ORD_MAY_MEN+1
+		FinSi
+		Escribir 'INGRESE UN NUMERO:'
+		Leer NUM
+	FinMientras
+	Escribir 'CANTIDAD DE GRUPOS CON IMPARES ORDENADOS: ',GRUPO_ORD_IMPAR_MAY_MEN
+FinAlgoritmo

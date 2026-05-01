@@ -1,0 +1,83 @@
+Algoritmo GUIA04EJ04
+	// PTO C
+	POS_TOTAL = 0
+	// PTO E
+	GRUPO_ORD_MAY_MEN = 0
+	// PTO D
+	MAX_PORC_IMPAR_POS = -1
+	NUM_GRUPO_MAX_PORC = 0
+	Para G<-1 Hasta 10 Con Paso 1 Hacer
+		// PTO A
+		BANDERA_PAR = 0; BANDERA_IMPAR = 0
+		// PTO B
+		CANT_POS = 0; CANT_NEG = 0
+		// PTO D
+		CANT_IMPAR_POS = 0
+		// PTO E
+		ES_ORDENADO = 1; BANDERA_PRIMER_NUM = 0
+		Leer NUM
+		Mientras NUM!=0 Hacer
+			// PTO A
+			Si NUM%2==0 Entonces
+				Si BANDERA_PAR==0|NUM>MAX_PAR Entonces
+					MAX_PAR = NUM
+					BANDERA_PAR = 1
+				FinSi
+			SiNo
+				Si BANDERA_IMPAR==0|NUM>MAX_IMPAR Entonces
+					MAX_IMPAR = NUM
+					BANDERA_IMPAR = 1
+				FinSi
+			FinSi
+			// PTO D
+			Si NUM>0&NUM%2!=0 Entonces
+				CANT_IMPAR_POS = CANT_IMPAR_POS+1
+			FinSi
+			// PTO B
+			Si NUM>0 Entonces
+				CANT_POS = CANT_POS+1
+				// PTO C
+				POS_TOTAL = POS_TOTAL+1
+			SiNo
+				Si NUM<0 Entonces
+					CANT_NEG = CANT_NEG+1
+				FinSi
+			FinSi
+			// PTO E
+			Si BANDERA_PRIMER_NUM==0 Entonces
+				BANDERA_PRIMER_NUM = 1
+			SiNo
+				Si NUM>=NUM_ANT Entonces
+					ES_ORDENADO = 0
+				FinSi
+			FinSi
+			NUM_ANT = NUM
+			Leer NUM
+		FinMientras
+		// PTO A
+		Escribir 'MAXIMO PAR: ',MAX_PAR
+		Escribir 'MAXIMO IMPAR: ',MAX_IMPAR
+		// PTO B
+		CANT_TOTAL_GRUPO = CANT_POS + CANT_NEG
+		PORC_POS = (CANT_POS*100)/CANT_TOTAL_GRUPO
+		PORC_NEG = (CANT_NEG*100)/CANT_TOTAL_GRUPO
+		Escribir 'PORCENTAJE POSITIVOS: ',PORC_POS,'%'
+		Escribir 'PORCENTAJE NEGATIVOS: ',PORC_NEG,'%'
+		// PTO D
+		PORC_ACTUAL = (CANT_IMPAR_POS*100)/CANT_TOTAL_GRUPO
+		Si PORC_ACTUAL>MAX_PORC_IMPAR_POS Entonces
+			MAX_PORC_IMPAR_POS = PORC_ACTUAL
+			NUM_GRUPO_MAX_PORC = G
+		FinSi
+		// PTO E
+		Si ES_ORDENADO==1 Entonces
+			GRUPO_ORD_MAY_MEN = GRUPO_ORD_MAY_MEN+1
+		FinSi
+	FinPara
+	// PTO C
+	Escribir 'TOTAL DE NUMEROS POSITIVOS: ',POS_TOTAL
+	// PTO D
+	Escribir 'GRUPO CON MAYOR PORCENTAJE DE IMPARES POSITIVOS: ',NUM_GRUPO_MAX_PORC
+	// PTO E
+	Escribir 'CANTIDAD DE GRUPOS ORDENADOS DE MAYOR A MENOR: ',GRUPO_ORD_MAY_MEN
+FinAlgoritmo
